@@ -1,0 +1,2 @@
+# vue_mastery
+Intro to Vue 3 Welcome to Vue Mastery’s Intro to Vue 3 course. We’re going to take a journey through the Vue universe to explore the technology and build a solid foundation of new skills, so we can build upon that to head towards Vue mastery. This course is your first step along the way, and on our platform you’ll find a whole library of courses you can take to level-up your skills.  Throughout this course, we’ll learn the fundamentals of Vue.js and build an app to put these concepts in practice.
