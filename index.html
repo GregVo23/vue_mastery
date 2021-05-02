@@ -12,18 +12,41 @@
     <section style="margin:auto; width:60%">
 
       <div id="app">
+        <!--Card-->
+
+        <div class="cart">Panier ({{ cart }})</div>
+        <!--Show-->
+
         <h1>{{ product }}</h1> 
+        <!--Binding-->
+
         <a v-bind:href="url"><img v-bind:src="image" style="width:250px;"></a>
         <p>{{ description }}</p>
         <p><b>Disponible: </b>{{ stock }}
-        <span v-if='stock > 10' >( En stock )</span>
-        <span v-else-if='stock <= 10 && stock > 0' >( Bientôt en rupture )</span>
-        <span v-else >( Epuisé )</span></p>
+        <!--Conditions-->
+
+        <span v-if='stock > 10' > ( En stock )</span>
+        <span v-else-if='stock <= 10 && stock > 0' > ( Bientôt en rupture )</span>
+        <span v-else > ( Epuisé )</span></p>
         <p v-if='onsale' ><b>Achat: </b> en ligne </p>
+        <!--list-->
+
+        <p style="display:inline-block;"><b>Les tailles :</b></p>
+        <ul style="display:inline-block;">
+          <li v-for="detail in details" style="display:inline-block;">{{ detail }}</li>
+        </ul>
+        <p style="display:inline-block; margin-left: 40px;"><b>Les couleurs :</b></p>
+        <ul style="display:inline-block;">
+          <li v-for="product in products" :key="product.id" @mouseover="updateImage(product.image)" style="display:inline-block;">{{ product.color }}, </li>
+        </ul>
+        <!--Button-->
+
+        <button class="button" v-on:click="addToCart" style="padding: 5px;">Ajouter au panier</button>
       </div>
 
     </section>
     <!-- Import Js -->
+    
     <script src="./main.js"></script>
   </body>
 </html>
