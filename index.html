@@ -9,11 +9,27 @@
     <script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
   </head>
   <body>
-    <div id="app">
-      <h1>Product goes here</h1>
-    </div>
+    <section style="margin:auto; width:60%">
 
+      <div id="app">
+        <h1>{{ product }}</h1> 
+        <a v-bind:href="url"><img v-bind:src="image" style="width:250px;"></a>
+        <p>{{ description }}</p>
+        <p><b>Disponible: </b>{{ stock }}
+        <span v-if='stock > 10' >( En stock )</span>
+        <span v-else-if='stock <= 10 && stock > 0' >( Bientôt en rupture )</span>
+        <span v-else >( Epuisé )</span></p>
+        <p v-if='onsale' ><b>Achat: </b> en ligne </p>
+      </div>
+
+    </section>
     <!-- Import Js -->
     <script src="./main.js"></script>
   </body>
 </html>
+
+
+<!-- Mount App -->
+<script>
+  const mountedApp = app.mount('#app')
+</script>
